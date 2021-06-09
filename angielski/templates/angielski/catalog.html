@@ -1,0 +1,10 @@
+{% extends 'angielski/base.html' %}
+{% load static %}
+
+{%block content%}
+<p class="Onas">Catalog of Services</p>
+<embed src="{% static 'pdf/service-catalog.pdf' %}" type="application/pdf" width="880" height="1000">
+<br>
+<br><br>
+
+{%endblock%}

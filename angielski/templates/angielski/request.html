@@ -1,0 +1,28 @@
+{% extends 'angielski/base.html' %}
+{%block content%}
+<h1 class="Onas">Certification application</h1>
+
+{% if submitted %}
+<p class="paragraf text-center">Submitted succesfully</p>
+{% else %}
+
+<div class="signup-form">
+<form action="" method="POST">
+  <h2>ANNEX NO. 1/P -01</h2>
+  <p>The application is the basis for the preparation of the contract for certification between the organization, and POLCARGO GROUP Sp. z o. o. and determine the dates of implementation of audits. Information contained in the application are treated as confidential.</p>
+  <hr>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <div class="form-group text-center">
+  <input type="submit" value="Send" class="btn btn-primary btn-block btn-lg">
+  </div>
+  <p class="small smallv2 text-center">Pursuant to the Personal Data Protection Act of 29.08.1997. (Journal of Laws 2002 No. 101poz. 926 with later amendments) I agree
+    consent to the collection, storage, processing, transfer, sharing and analysis of the above data for
+    necessary for the certification process conducted by Polcargo Group Sp. z o.o. based in Gdynia,
+     subject to the provisions of the above Act. I give this data voluntarily, with the right to inspect and correct them.
+</p>
+</form>
+</div>
+{% endif %}
+
+{%endblock%}  

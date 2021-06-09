@@ -1,0 +1,209 @@
+ /*navbar*/
+.navbar-custom, .navbar-custom a, .navbar-custom ul li a {
+  color: #183243;
+  background-color: #fafafa;
+  font-size: 25;
+}
+
+/*navbar animacja*/
+@media (min-width: 992px) {
+  .animate {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  100% {
+    transform:translateY(0rem);
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /*footer*/
+ 
+ @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+ .container-fluid {
+     overflow: hidden;
+     margin-top: 100px;
+     background: #3C403D;
+     color: #627482 !important;
+     margin-bottom: 0;
+     padding-bottom: 0
+ }
+
+ small {
+     font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important
+ }
+
+ .bold-text {
+     color: #989c9e !important
+ }
+
+ .mt-55 {
+     margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important
+ }
+
+ h3 {
+     font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important
+ }
+
+ .social {
+     font-size: 21px !important
+ }
+
+ .rights {
+     font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
+ }
+
+.naglowek {
+  font-family: 'Work Sans', sans-serif;
+}
+
+
+
+/*body*/
+body {
+  background-color: #DADED4;
+}
+
+
+
+
+
+/*czcionka*/
+
+.paragraf {
+  font-family: 'Dosis', sans-serif;
+  font-size: 20;
+}
+.Onas {
+  font-family: 'Arvo', serif;
+  font-size: 25;
+  color: #12232E;
+}
+
+/*mapa*/
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+.navbar .nav-item:not(:last-child) {
+  margin-right: 35px;
+}
+ 
+.dropdown-toggle::after {
+   transition: transform 0.15s linear; 
+}
+ 
+.show.dropdown .dropdown-toggle::after {
+  transform: translateY(3px);
+}
+
+
+
+
+
+/*reszta*/
+
+h1 a, h2 a {
+    color: #183243;
+}
+
+.page-header {
+    background-color: #12232E;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h2 a, .post h1 a:visited {
+    color: #000000;
+}
+
+.menu {
+    background-color: #25b360;
+}

@@ -1,0 +1,30 @@
+{% extends 'aktualnosci/base.html' %}
+{%block content%}
+<h1 class="Onas">Zapytanie ofertowe</h1>
+
+{% if submitted %}
+<p class="paragraf text-center">Przesłano pomyślnie</p>
+{% else %}
+
+<div class="signup-form">
+<form action="" method="POST">
+  <h2>ZAŁĄCZNIK NR 9/P -01</h2>
+  <p>Szanowni Państwo, w celu przygotowania dla Państwa oferty cenowej procesu certyfikacji prosimy 
+    o wypełnienie niniejszego zapytania ofertowego. Złożenie przez Państwa zapytania nie zobowiązuje do skorzystania z usług naszej firmy, jednocześnie informujemy, iż informacje zawarte 
+    w formularzu traktowane są jako poufne.
+    </p>
+  <hr>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <div class="form-group text-center">
+  <input type="submit" value="Prześlij" class="btn btn-primary btn-block btn-lg">
+  </div>
+  <p class="small smallv2 text-center">Zgodnie z ustawą o ochronie danych osobowych z dnia 29.08.1997 r. (Dz. U. 2002 r. Nr 101poz. 926 z późn. zm.) wyrażam
+    zgodę na gromadzenie, przechowywanie, przetwarzanie, przekazywanie, udostępnianie oraz analizę powyższych danych dla
+    potrzeb niezbędnych do realizacji procesu certyfikacji prowadzonego przez Polcargo Group Sp. z o.o. z siedzibą w Gdyni,
+     z zastrzeżeniem uregulowań ww. ustawy. Dane te podaję dobrowolnie, z prawem do wglądu oraz ich poprawiania.</p>
+</form>
+</div>
+{% endif %}
+
+{%endblock%}  

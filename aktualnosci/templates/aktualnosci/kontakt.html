@@ -1,0 +1,42 @@
+{% extends 'aktualnosci/base.html' %}
+
+{%block content%}
+<p class="Onas">
+Polcargo Group Sp. z o.o.
+</p>
+<p class="paragraf">
+81-963 Gdynia <br>
+ul. Żeromskiego 32
+</p>
+
+<p class="paragraf">Sąd Rej. Gdańsk-Północ w Gdańsku, KRS 0000185947 <br>
+NIP 586-10-34-090 
+</p>
+<p class="paragraf">
+tel: (+48 58) 620-79-41 <br>
+fax: (+48 58) 621-68-19 
+</p>
+<p class="paragraf">
+e-mail: polcargo.certyfikacja@beep.pl <br>
+e-mail: polcargo.group@beep.pl
+</p>
+
+
+<div id='map'></div>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoia3ViYWQ1NjUiLCJhIjoiY2twcGNxbDNqMDV6azJ3azljNTRjbHl0bCJ9.ZqyUFocJoSEtCj0rSlGoKg'; 
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/kubad565/ckppe6fg8073818scrkm052r5', 
+      center: [18.544673613602278, 54.52148247689954],
+      zoom: 17
+    });
+    var title = "Polcargo"
+    var description = "Polcargo"
+    </script>
+
+
+
+</script>
+
+{%endblock%}

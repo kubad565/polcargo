@@ -1,0 +1,39 @@
+{% extends 'angielski/base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="article-clean">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                <div class="intro">
+                    <h1 class="text-center Onas">{{ news.title }}</h1>
+                    <p class="text-center "><span class="by">author:</span> <a href="#">{{news.author}}</a><span class="date">
+                        {% language 'en' %}
+                        {{ news.published_date }} 
+                        {% endlanguage %}
+
+                    </span></p>
+                    <div class="text-center">
+                    <img class="img-fluid" src="{{ news.image.url }}"> </div>
+                </div>
+                <div class="text">
+                    <p class="paragraf text-center">{{ news.text|linebreaksbr }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--    <div class="post">
+        {% if news.published_date %}
+            <div class="date">
+                {{ news.published_date }}
+            </div>
+        {% endif %}
+        <h2>{{ news.title }}</h2>
+        <p>{{ news.text|linebreaksbr }}</p>
+    </div> -->
+
+{% endblock %}

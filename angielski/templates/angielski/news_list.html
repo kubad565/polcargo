@@ -1,0 +1,171 @@
+{% extends 'angielski/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+
+
+
+<section class="text-center">
+  <h4 class="mb-5"><strong>
+
+    Offer of Polcargo Group is directed to all customers interested in auditing and certification of Management Systems. Moreover our shareholders offer you full range inspection of commodities.
+
+    </strong></h4>
+
+  <div class="row">
+    <div class="col-lg-6 mb-4">
+      <div class="card">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+          <img src="{% static 'images/onas.jpg' %}" class="img-fluid" />
+          <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title Onas">About us</h2>
+          <p class="card-text paragraf">
+            We are together with other companies concentrated in POLCARGO GROUP, continuators of national company Polcargo which was founded in 1949.
+          </p>
+          <a href="/en/about" class="btn btn-primary">Learn more</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 mb-4">
+      <div class="card">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+          <img src="{% static 'images/oferta.jpg' %}" class="img-fluid" />
+          <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title Onas">Offer</h2>
+          <p class="card-text paragraf">
+            Offer of Polcargo Group is directed to all customers interested in auditing and certification of Management Systems.
+          </p>
+          <a href="/en/description" class="btn btn-primary">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 mb-4">
+      <div class="card">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+          <img src="{% static 'images/udzialowcy.jpg' %}" class="img-fluid" />
+          <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title Onas">Shareholders</h2>
+          <p class="card-text paragraf">
+            Reliability and responsibility in business are respected by many generations of Polcargo.
+          </p>
+          <a href="/en/shareholders" class="btn btn-primary">Learn more</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 mb-4">
+      <div class="card">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+          <img src="{% static 'images/kontakt.jpg' %}" class="img-fluid" />
+          <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title Onas">Contact</h2>
+          <p class="card-text paragraf">
+            polcargo.certyfikacja@beep.pl
+            tel: (+48 58) 620-79-41
+            fax: (+48 58) 621-68-19
+          </p>
+          <a href="/en/contact" class="btn btn-primary">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<br>
+<section class="text-center aktualnosci2">
+<h2 class="mb-5 Onas4"><strong>News</strong></h2>
+<br>
+
+
+{% for new in news %}
+<section class="border-bottom pb-4 mb-5">
+  <div class="row gx-5">
+    <div class="col-md-6 mb-4">
+      <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+        <img src="{{ new.image.url }}" class="img-fluid"/>
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <span class="badge bg-secondary px-2 py-1 shadow-1-strong mb-3">
+        {% language 'en' %}
+        {{ new.published_date|date:"d M Y" }}
+        {% endlanguage %}
+      </span>
+      <h4><a class="Onas2 txt" href="{% url 'news_detail2' pk=new.pk %}"><span class="txt">{{ new.eng_title }}</span></a></h4>
+      <p class="text-muted paragraf2">
+        {{ new.eng_subtitle|linebreaksbr }}
+      </p>
+      <!--<button type="button" class="btn btn-primary">Czytaj</button> -->
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+        <!-- Pagination -->
+
+        <!--      
+    {% for new in news %}
+      <div class="post">
+        <div class="date">
+        <img src="{{ new.image.url }}">
+        <p>Data Publikacji: {{ new.published_date }}</p>
+        </div>
+        <h2><a href="{% url 'news_detail' pk=new.pk %}">{{ new.title }}</a></h2>
+        <p>{{ new.text|linebreaksbr }}</p>
+      </div>
+    {% endfor %} 
+-->
+
+    <div class="container">
+    <div class="pagination justify-content-center">
+      {% if news.has_previous %}
+        <a class="pagination-action" href="?page=1">
+          <i class="fas fa-angle-double-left" aria-hidden="true"></i>
+        </a>
+        <a class="pagination-action" href="?page={{ news.previous_page_number }}"> 
+          <i class="fas fa-angle-left" aria-hidden="true"></i>
+        </a>
+      {% endif %}
+
+      {% for num in news.paginator.page_range %}
+        {% if news.number == num %}
+          <span class="pagination-number pagination-current">{{ num }}</span>
+        {% elif num > news.number|add:'-3' and num < news.number|add:'3' %}
+          <a class="pagination-number" href="?page={{ num }}"> {{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if news.has_next %}
+        <a class="pagination-action" href="?page={{ news.next_page_number }}"><i class="fas fa-angle-right" aria-hidden="true"></i></a>
+        <a class="pagination-action" href="?page={{ news.paginator.num_pages }}"><i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
+      {% endif %}
+      </div>
+    </div>
+
+{% endblock %}

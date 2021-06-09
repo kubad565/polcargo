@@ -1,0 +1,30 @@
+{% extends 'angielski/base.html' %}
+{%block content%}
+<h1 class="Onas">Offer inquiry</h1>
+
+{% if submitted %}
+<p class="paragraf text-center">Submitted succesfully</p>
+{% else %}
+
+<div class="signup-form">
+<form action="" method="POST">
+  <h2>ANNEX NO. 9/P -01</h2>
+  <p>In order to prepare the price offer for the certification process, please 
+    please fill in this inquiry form. Submitting your inquiry does not oblige you to use the services of our company. At the same time, we would like to inform you that the information contained in the 
+    information contained in the form are treated as confidential.    
+    </p>
+  <hr>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <div class="form-group text-center">
+  <input type="submit" value="Send" class="btn btn-primary btn-block btn-lg">
+  </div>
+  <p class="small smallv2 text-center">Pursuant to the Personal Data Protection Act of 29.08.1997. (Journal of Laws 2002 No. 101poz. 926 with later amendments) I agree
+    consent to the collection, storage, processing, transfer, sharing and analysis of the above data for
+    necessary for the certification process conducted by Polcargo Group Sp. z o.o. based in Gdynia,
+     subject to the provisions of the above Act. I give this data voluntarily, with the right to inspect and correct them.</p>
+</form>
+</div>
+{% endif %}
+
+{%endblock%}  
